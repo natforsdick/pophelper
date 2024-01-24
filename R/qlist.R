@@ -329,8 +329,7 @@ sortQ <- function(qlist,by="k",decreasing=FALSE,debug=FALSE) {
   if(debug) {print(str(b)); print(b)}
   
   # order
-  if(length(by)==1) ord <- order(b[,by,drop=FALSE])
-  if(length(by)>1) ord <- do.call(order,b[,by,drop=FALSE])
+  ord <- do.call(order,b[,by,drop=FALSE])
   if(decreasing) ord <- rev(ord)
   # sort qlist
   return(qlist[ord])
