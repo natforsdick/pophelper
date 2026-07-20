@@ -1234,7 +1234,7 @@ plotQ <- function(qlist=NULL,imgoutput="sep",clustercol=NA,sortind=NA,grplab=NA,
                                        angle=indlabangle,vjust=indlabvjust,
                                        hjust=indlabhjust,margin=margin(t=indlabspacer)),
               axis.text.y=element_text(size=indlabsize,colour=indlabcol,margin=margin(r=indlabspacer)),
-              axis.ticks=element_line(size=ticksize,colour=indlabcol),
+              axis.ticks=element_line(linewidth=ticksize,colour=indlabcol),
               axis.ticks.length=unit(ticklength,"cm"),
               axis.line=element_blank(),
               axis.title=element_blank(),
@@ -1302,7 +1302,7 @@ plotQ <- function(qlist=NULL,imgoutput="sep",clustercol=NA,sortind=NA,grplab=NA,
         if(showdiv)
         {
           div_position <- marker_position[c(marker_position$count %in% divgrp),]
-          if(nrow(div_position) > 2) gg_plot_panel <- gg_plot_panel+geom_vline(xintercept=div_position$divxpos[-c(1,length(div_position$divxpos))],colour=divcol,linetype=divtype,size=divsize,alpha=divalpha)
+          if(nrow(div_position) > 2) gg_plot_panel <- gg_plot_panel+geom_vline(xintercept=div_position$divxpos[-c(1,length(div_position$divxpos))],colour=divcol,linetype=divtype,linewidth=divsize,alpha=divalpha)
         }
 
         if(!showgrplab)
@@ -1349,7 +1349,7 @@ plotQ <- function(qlist=NULL,imgoutput="sep",clustercol=NA,sortind=NA,grplab=NA,
           gg_plot_grplab <- ggplot()+
             geom_blank(data=label_position,aes(x=labxpos,y=labypos))+
             geom_text(data=label_position,aes(x=labxpos,y=labypos),label=label_position$label,size=ppar$grplabsize,angle=ppar$grplabangle,hjust=ppar$grplabjust,colour=grplabcol,alpha=grplabalpha,family=font,fontface=grplabface)+
-            geom_line(data=marker_position,aes(x=markerxpos,y=markerypos),colour=linecol,size=ppar$linesize,linetype=linetype,alpha=linealpha)+
+            geom_line(data=marker_position,aes(x=markerxpos,y=markerypos),colour=linecol,linewidth=ppar$linesize,linetype=linetype,alpha=linealpha)+
             geom_point(data=marker_position,aes(x=markerxpos,y=markerypos),size=ppar$pointsize,colour=pointcol,shape=pointtype,fill=pointbgcol,alpha=pointalpha)+
             scale_x_continuous(expand=c(0,0))+
             scale_y_continuous(expand=c(0,0),limits=c(0,1))+
@@ -1650,7 +1650,7 @@ plotQ <- function(qlist=NULL,imgoutput="sep",clustercol=NA,sortind=NA,grplab=NA,
                                      angle=indlabangle,vjust=indlabvjust,
                                      hjust=indlabhjust,margin=margin(t=indlabspacer)),
             axis.text.y=element_text(size=indlabsize,colour=indlabcol),
-            axis.ticks=element_line(size=ticksize,colour=indlabcol),
+            axis.ticks=element_line(linewidth=ticksize,colour=indlabcol),
             axis.ticks.length=unit(ticklength,"cm"),
             axis.line=element_blank(),
             axis.title=element_blank(),
@@ -1717,7 +1717,7 @@ plotQ <- function(qlist=NULL,imgoutput="sep",clustercol=NA,sortind=NA,grplab=NA,
       # add grp divider lines only if 2 grps or more
       if(showdiv)
       {
-        if(nrow(div_position) > 0) gg_plot_panel <- gg_plot_panel+geom_vline(data=div_position,aes(xintercept=divxpos),colour=divcol,linetype=divtype,size=divsize,alpha=divalpha)
+        if(nrow(div_position) > 0) gg_plot_panel <- gg_plot_panel+geom_vline(data=div_position,aes(xintercept=divxpos),colour=divcol,linetype=divtype,linewidth=divsize,alpha=divalpha)
       }
 
       if(!showgrplab)
@@ -1765,7 +1765,7 @@ plotQ <- function(qlist=NULL,imgoutput="sep",clustercol=NA,sortind=NA,grplab=NA,
         gg_plot_grplab <- ggplot()+
           geom_blank(data=label_position,aes(x=labxpos,y=labypos))+
           geom_text(data=label_position,aes(x=labxpos,y=labypos),label=label_position$label,angle=ppar$grplabangle,hjust=ppar$grplabjust,size=ppar$grplabsize,colour=grplabcol,alpha=grplabalpha,family=font,fontface=grplabface)+
-          geom_line(data=marker_position,aes(x=markerxpos,y=markerypos),colour=linecol,size=ppar$linesize,linetype=linetype,alpha=linealpha)+
+          geom_line(data=marker_position,aes(x=markerxpos,y=markerypos),colour=linecol,linewidth=ppar$linesize,linetype=linetype,alpha=linealpha)+
           geom_point(data=marker_position,aes(x=markerxpos,y=markerypos),size=ppar$pointsize,colour=pointcol,shape=pointtype,fill=pointbgcol,alpha=pointalpha)+
           scale_x_continuous(expand=c(0,0))+
           scale_y_continuous(expand=c(0,0),limits=c(0,1))+
@@ -2382,7 +2382,7 @@ plotQMultiline <- function(qlist=NULL,spl=NA,lpp=NA,clustercol=NA,sortind=NA,grp
               axis.title=element_blank(),
               axis.text.x=element_text(size=indlabsize,colour=indlabcol,angle=indlabangle,vjust=indlabvjust,hjust=indlabhjust,margin=margin(t=indlabspacer)),
               axis.text.y=element_text(size=indlabsize,colour=indlabcol,margin=margin(r=indlabspacer)),
-              axis.ticks=element_line(size=ticksize,colour=indlabcol),
+              axis.ticks=element_line(linewidth=ticksize,colour=indlabcol),
               axis.ticks.length=unit(ticklength,"cm"),
               plot.margin=unit(mar,units))
 
