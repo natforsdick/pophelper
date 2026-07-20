@@ -4,6 +4,8 @@
 
 [![ci_badge](https://github.com/royfrancis/pophelper/workflows/build/badge.svg)](https://github.com/royfrancis/pophelper/actions?workflow=build) [![codecov_.io_badge](https://codecov.io/github/royfrancis/pophelper/coverage.svg?branch=master)](https://codecov.io/github/royfrancis/pophelper?branch=master)
 
+Fork of the `pophelper` R package, modified for use with `ggplot2` v4.X.
+
 `pophelper` is an R package and web app to analyse and visualise population structure. See the [project website](http://royfrancis.github.io/pophelper/) for more details. An interactive version of this package using shiny web framework is available as [pophelperShiny](https://github.com/royfrancis/pophelperShiny).
 
 ## Disclaimer
