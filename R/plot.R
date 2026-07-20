@@ -1208,7 +1208,7 @@ plotQ <- function(qlist=NULL,imgoutput="sep",clustercol=NA,sortind=NA,grplab=NA,
       ## COMMON PLOT TOP PANEL ---------------------------------------------------
       # create plot
       gg_plot_panel <- ggplot(data=df2,aes(x=order_ind,y=value,fill=variable))+
-        geom_bar(width=barsize,size=barbordersize,colour=barbordercolour,
+        geom_bar(width=barsize,linewidth=barbordersize,colour=barbordercolour,
                  stat="identity",position="fill",na.rm=na.rm)+
         scale_x_continuous(breaks=df2$order_ind,labels=df2$ind,expand=c(0,0))+
         scale_y_continuous(expand=c(0,0))+
@@ -2368,7 +2368,7 @@ plotQMultiline <- function(qlist=NULL,spl=NA,lpp=NA,clustercol=NA,sortind=NA,grp
 
       #df2 <- df2[rev(1:nrow(df2)),]
       plist[[j]] <- ggplot(data=df2,aes(x=ind,y=value,fill=variable))+
-        geom_bar(width=barsize,size=barbordersize,colour=barbordercolour,stat="identity",position="fill",na.rm=na.rm)+
+        geom_bar(width=barsize,linewidth=barbordersize,colour=barbordercolour,stat="identity",position="fill",na.rm=na.rm)+
         scale_x_discrete(expand=c(0,0))+
         scale_y_continuous(expand=c(0,0),limits=c(0,1))+
         scale_fill_manual(values=coll,labels=legendlab1)+
