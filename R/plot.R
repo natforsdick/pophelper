@@ -1610,7 +1610,7 @@ plotQ <- function(qlist=NULL,imgoutput="sep",clustercol=NA,sortind=NA,grplab=NA,
     if(sortindcheck=="label" || sortindcheck=="empty")
     {
       gg_plot_panel <- ggplot(data=df3,aes(x=order_ind,y=value,fill=variable))+
-        geom_bar(width=barsize,size=barbordersize,colour=barbordercolour,stat="identity",position="fill",na.rm=na.rm)+
+        geom_bar(width=barsize,linewidth=barbordersize,colour=barbordercolour,stat="identity",position="fill",na.rm=na.rm)+
         scale_x_continuous(breaks=df3$order_ind,labels=df3$ind,expand=c(0,0))+
         scale_y_continuous(expand=c(0,0))+
         scale_fill_manual(values=coll,labels=legendlab1)+
@@ -1618,7 +1618,7 @@ plotQ <- function(qlist=NULL,imgoutput="sep",clustercol=NA,sortind=NA,grplab=NA,
         get(theme)(base_family=font,base_size=basesize)
     }else{
       gg_plot_panel <- ggplot(data=df3,aes(x=order_cumulative,y=value,fill=variable))+
-        geom_bar(width=barsize,size=barbordersize,colour=barbordercolour,stat="identity",position="fill",na.rm=na.rm)+
+        geom_bar(width=barsize,linewidth=barbordersize,colour=barbordercolour,stat="identity",position="fill",na.rm=na.rm)+
         scale_x_continuous(breaks=df3$order_cumulative,labels=df3$ind,expand=c(0,0))+
         scale_y_continuous(expand=c(0,0))+
         scale_fill_manual(values=coll,labels=legendlab1)+
